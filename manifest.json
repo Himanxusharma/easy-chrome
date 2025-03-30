@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Easy Chrome",
+  "version": "1.0",
+  "description": "A Chrome extension with a floating navbar and refresh button",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+} 
