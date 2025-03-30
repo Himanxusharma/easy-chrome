@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="64" cy="64" r="60" fill="#4285F4"/>
+  
+  <!-- Chrome-like segments -->
+  <path d="M64 4C32.5 4 7 29.5 7 61C7 92.5 32.5 118 64 118C95.5 118 121 92.5 121 61C121 29.5 95.5 4 64 4Z" fill="#34A853"/>
+  <path d="M64 4C32.5 4 7 29.5 7 61C7 92.5 32.5 118 64 118C95.5 118 121 92.5 121 61C121 29.5 95.5 4 64 4Z" fill="#FBBC05"/>
+  <path d="M64 4C32.5 4 7 29.5 7 61C7 92.5 32.5 118 64 118C95.5 118 121 92.5 121 61C121 29.5 95.5 4 64 4Z" fill="#EA4335"/>
+  
+  <!-- Center Circle -->
+  <circle cx="64" cy="64" r="25" fill="white"/>
+  
+  <!-- Refresh Symbol -->
+  <path d="M64 45V55H75L60 70L75 85V75H85V55H75L85 45H64Z" fill="#4285F4"/>
+</svg> 
