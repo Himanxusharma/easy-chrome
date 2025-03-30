@@ -133,6 +133,18 @@ body::before {
   height: 32px;
   border-radius: 50%;
   overflow: hidden;
+  cursor: grab;
+}
+
+.action-btn.dragging {
+  opacity: 0.7;
+  cursor: grabbing;
+  transform: scale(1.05);
+}
+
+.action-btn.drag-over {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-content {
