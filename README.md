@@ -1,28 +1,118 @@
-# Easy Chrome
+# Easy Chrome - Chrome Extension
 
-A lightweight Chrome extension that provides quick access to common browser actions through a clean, modern interface.
+A powerful Chrome extension that enhances your browsing experience with essential features and a modern, intuitive interface.
 
-## Features
+## 🌟 Features
 
-- **Quick Refresh** (↺): Standard page refresh
-- **Hard Refresh** (⚙️): Clears cache for current tab and reloads
-- **Clear Cache** (🗑️): Clears entire browser cache
-- **Duplicate Tab** (⧉): Opens current page in a new tab
-- **Toggle Mute** (🔊/🔇): Mute or unmute the current tab
-- **Customizable Layout**: Drag and drop buttons to rearrange them (arrangement persists across sessions)
+### Core Functions
+- 🔄 **Refresh Tab**: Quick refresh with cache clearing
+- 🔄 **Hard Refresh**: Complete page reload with cache clearing
+- 📋 **Duplicate Tab**: Create a copy of the current tab
+- 🔇 **Mute/Unmute**: Toggle tab audio with visual feedback
+- 🎯 **Pin Tab**: Keep important tabs in your browser
+- 🎨 **Customizable Interface**: Drag-and-drop button arrangement
 
-## Installation
+### User Experience
+- 🎨 **Modern Design**: Clean, intuitive interface
+- 🎯 **Drag & Drop**: Customize button positions
+- 💾 **Settings Persistence**: Saves your preferences
+- 🔄 **Real-time Updates**: Instant visual feedback
+- 🎨 **Responsive Design**: Works on all screen sizes
 
-1. Clone this repository:
+## 🚀 Installation
+
+1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/easy-chrome.git
    ```
 
 2. Open Chrome and navigate to `chrome://extensions/`
 
-3. Enable "Developer mode" in the top right corner
+3. Enable "Developer mode" in the top right
 
-4. Click "Load unpacked" and select the `easy-chrome` directory
+4. Click "Load unpacked" and select the extension directory
+
+## 🛠️ Features in Detail
+
+### Refresh Tab
+- Quick refresh with cache clearing
+- Maintains current page state
+- Instant visual feedback
+- Keyboard shortcut support
+
+### Hard Refresh
+- Complete page reload
+- Clears all cached data
+- Useful for development
+- Resets page state
+
+### Duplicate Tab
+- Creates exact copy of current tab
+- Preserves page state
+- Maintains history
+- Quick tab management
+
+### Toggle Mute
+- Dynamic icon updates (🔊/🔇)
+- Real-time state changes
+- Persists across refreshes
+- Visual feedback
+
+### Pin Tab
+- Keeps tabs in browser
+- Quick access to important pages
+- Prevents accidental closing
+- Browser restart preservation
+
+## 🔒 Permissions Used
+
+The extension requires the following permissions to function properly:
+
+### Tab Management
+- `"tabs"`: Required to:
+  - Access and manipulate the current tab
+  - Get tab information for refresh operations
+  - Check tab mute status
+  - Create new tabs for the duplicate feature
+
+### Data Management
+- `"browsingData"`: Required to:
+  - Clear browser cache
+  - Perform hard refresh operations
+  - Remove cached data for specific tabs
+  - Improve browsing performance through cache management
+
+### Storage & Sync
+- `"storage"`: Required to:
+  - Save user preferences
+  - Store button arrangement positions
+  - Sync settings across devices when signed into Chrome
+  - Persist user customizations between browser sessions
+
+### Audio Control
+- `"tabCapture"`: Required to:
+  - Control tab audio states
+  - Toggle mute/unmute functionality
+  - Access tab audio information
+  - Update mute status indicators
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- Icons from [source]
+- Inspired by [inspiration]
+- Built with modern web technologies
+
+## 📞 Support
+
+For support, please open an issue in the GitHub repository or contact [contact information].
 
 ## Project Structure
 
@@ -46,39 +136,6 @@ easy-chrome/
 - Bootstrap 5.3.0
 - Chrome Storage Sync API
 
-## Features in Detail
-
-### Quick Refresh
-- Simple page refresh functionality
-- Keyboard shortcut equivalent: F5
-
-### Hard Refresh
-- Clears cache for the current tab
-- Reloads the page bypassing the cache
-- Keyboard shortcut equivalent: Ctrl/Cmd + Shift + R
-
-### Clear Cache
-- Clears all browser cache
-- Shows confirmation when complete
-- Useful for development and troubleshooting
-
-### Duplicate Tab
-- Opens the current page in a new tab
-- New tab opens immediately after the current tab
-- Maintains all page state and history
-
-### Toggle Mute
-- Mute or unmute the current tab
-- Dynamic icon updates to show current state (🔊/🔇)
-- Persists across page refreshes
-- Works with audio and video content
-
-### Customizable Layout
-- Drag and drop interface
-- Button positions are saved automatically
-- Syncs across devices when signed into Chrome
-- Smooth animations and visual feedback
-
 ## Development
 
 ### Prerequisites
@@ -94,89 +151,3 @@ easy-chrome/
 1. Ensure all files are in their correct directories
 2. Update version number in `manifest.json` if needed
 3. ZIP the entire directory for distribution
-
-## Permissions Used
-
-The extension requires the following permissions to function properly:
-
-- `"tabs"`: Required to:
-  - Access and manipulate the current tab
-  - Get tab information for refresh operations
-  - Check tab mute status
-  - Create new tabs for the duplicate feature
-
-- `"browsingData"`: Required to:
-  - Clear browser cache
-  - Perform hard refresh operations
-  - Remove cached data for specific tabs
-  - Improve browsing performance through cache management
-
-- `"storage"`: Required to:
-  - Save user preferences
-  - Store button arrangement positions
-  - Sync settings across devices when signed into Chrome
-  - Persist user customizations between browser sessions
-
-- `"tabCapture"`: Required to:
-  - Control tab audio states
-  - Toggle mute/unmute functionality
-  - Access tab audio information
-  - Update mute status indicators
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Icons and symbols from Unicode character set
-- Inspired by common browser functionality needs
-- Built with modern Chrome Extension best practices
-
-# Chrome Extension: Floating Navbar for Browser Actions
-
-## 🚀 Overview
-This Chrome extension injects a **floating navbar** into all websites, providing quick access to essential browser functions such as:
-- **Refresh Page**
-- **Hard Refresh (Clear Cache & Reload)**
-- **Validate HTML**
-- **Clear Cache**
-- **More Custom Actions**
-
-The navbar is draggable, lightweight, and designed to stay out of the way while being easily accessible. Users can toggle its visibility through the extension popup.
-
----
-
-## 🔧 Features
-### ✅ Floating Navbar
-- Injected into all websites using a **content script**.
-- Positioned **at the top-right** of the page by default.
-- **Fixed positioning** ensures visibility even when scrolling.
-- **Customizable & draggable**.
-
-### ✅ Essential Browser Actions
-- **Refresh Button** → Reloads the current page.
-- **Hard Refresh Button** → Clears the cache and reloads the page.
-- **Validate HTML** → Opens the W3C Validator with the current page's URL.
-- **Clear Cache** → Clears browsing cache for improved performance.
-
-### ✅ User Experience
-- **Minimalist UI** with a clean and modern design.
-- **Draggable Navbar** for flexible placement.
-- **Toggle Visibility** via the extension popup.
-
----
-
-## 📂 Installation
-### 🛠 Load Locally (For Development & Testing)
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/Himanxusharma/easy-chrome.git
