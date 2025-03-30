@@ -104,12 +104,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🙏 Acknowledgments
-
-- Icons from [source]
-- Inspired by [inspiration]
-- Built with modern web technologies
-
 ## 📞 Support
 
 For support, please open an issue in the GitHub repository or contact [contact information].
