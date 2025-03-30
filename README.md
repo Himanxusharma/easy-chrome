@@ -8,6 +8,7 @@ A lightweight Chrome extension that provides quick access to common browser acti
 - **Hard Refresh** (⚙️): Clears cache for current tab and reloads
 - **Clear Cache** (🗑️): Clears entire browser cache
 - **Duplicate Tab** (⧉): Opens current page in a new tab
+- **Toggle Mute** (🔊/🔇): Mute or unmute the current tab
 - **Customizable Layout**: Drag and drop buttons to rearrange them (arrangement persists across sessions)
 
 ## Installation
@@ -66,6 +67,12 @@ easy-chrome/
 - New tab opens immediately after the current tab
 - Maintains all page state and history
 
+### Toggle Mute
+- Mute or unmute the current tab
+- Dynamic icon updates to show current state (🔊/🔇)
+- Persists across page refreshes
+- Works with audio and video content
+
 ### Customizable Layout
 - Drag and drop interface
 - Button positions are saved automatically
@@ -90,9 +97,31 @@ easy-chrome/
 
 ## Permissions Used
 
-- `"tabs"`: For tab manipulation and refresh operations
-- `"browsingData"`: For cache clearing operations
-- `"storage"`: For saving button arrangements
+The extension requires the following permissions to function properly:
+
+- `"tabs"`: Required to:
+  - Access and manipulate the current tab
+  - Get tab information for refresh operations
+  - Check tab mute status
+  - Create new tabs for the duplicate feature
+
+- `"browsingData"`: Required to:
+  - Clear browser cache
+  - Perform hard refresh operations
+  - Remove cached data for specific tabs
+  - Improve browsing performance through cache management
+
+- `"storage"`: Required to:
+  - Save user preferences
+  - Store button arrangement positions
+  - Sync settings across devices when signed into Chrome
+  - Persist user customizations between browser sessions
+
+- `"tabCapture"`: Required to:
+  - Control tab audio states
+  - Toggle mute/unmute functionality
+  - Access tab audio information
+  - Update mute status indicators
 
 ## Contributing
 

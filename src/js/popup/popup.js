@@ -120,4 +120,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Mute button functionality
+  const muteBtn = document.getElementById('muteBtn');
+  const muteBtnIcon = muteBtn.querySelector('.btn-icon');
+
+  // Check initial mute state and update icon
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    if (tabs[0]) {
+      const isMuted = tabs[0].mutedInfo?.muted || false;
+      muteBtnIcon.textContent = isMuted ? '🔇' : '🔊';
+      muteBtn.title = isMuted ? 'Unmute Tab' : 'Mute Tab';
+    }
+  });
+
+  muteBtn.addEventListener('click', () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      if (tabs[0]) {
+        const isMuted = tabs[0].mutedInfo?.muted || false;
+        chrome.tabs.update(tabs[0].id, { muted: !isMuted }, (tab) => {
+          // Update icon based on new state
+          muteBtnIcon.textContent = tab.mutedInfo.muted ? '🔇' : '🔊';
+          muteBtn.title = tab.mutedInfo.muted ? 'Unmute Tab' : 'Mute Tab';
+        });
+      }
+    });
+  });
 }); 
