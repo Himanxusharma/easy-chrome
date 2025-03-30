@@ -20,4 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  const clearCacheButton = document.getElementById('clearCacheBtn');
+  
+  clearCacheButton.addEventListener('click', () => {
+    // Clear all browser cache
+    chrome.browsingData.remove({
+      "since": 0
+    }, {
+      "cache": true,
+      "cacheStorage": true
+    }, () => {
+      // Show confirmation alert
+      alert('Browser cache has been cleared!');
+    });
+  });
 }); 

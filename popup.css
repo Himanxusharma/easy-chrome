@@ -157,6 +157,12 @@ body::before {
   top: -1px;
 }
 
+#clearCacheBtn .btn-icon {
+  font-size: 1.1rem;
+  position: relative;
+  top: -1px;
+}
+
 .action-btn:hover {
   background: #ffffff;
   transform: translateY(-1px);
