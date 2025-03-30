@@ -82,40 +82,31 @@ body::before {
   width: 100%;
 }
 
-.logo-container {
-  width: 40px;
-  height: 40px;
-  position: relative;
-}
-
+/* Remove unused logo-container and logo styles */
+.logo-container,
 .logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  animation: float 3s ease-in-out infinite;
+  display: none;
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
+/* Remove unused title styles */
 .title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin: 0;
-  letter-spacing: -0.5px;
-  background: linear-gradient(45deg, #4285F4, #34A853);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  display: none;
+}
+
+/* Remove unused button-specific styles */
+#hardRefreshBtn .btn-icon,
+#clearCacheBtn .btn-icon,
+#duplicateTabBtn .btn-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Remove unused scrollbar styles */
+::-webkit-scrollbar,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:hover {
+  display: none;
 }
 
 .action-btn {
@@ -223,22 +214,52 @@ body::before {
   }
 }
 
-/* Custom scrollbar for webkit browsers */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+/* Notification styles */
+.notification {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 1000;
+  animation: notificationSlide 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
+.notification.success {
+  background-color: rgba(76, 175, 80, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+.notification.error {
+  background-color: rgba(244, 67, 54, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.3);
+@keyframes notificationSlide {
+  0% {
+    transform: translate(-50%, -15px);
+    opacity: 0;
+  }
+  15% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  85% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -15px);
+    opacity: 0;
+  }
 }

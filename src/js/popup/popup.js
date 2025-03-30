@@ -1,3 +1,5 @@
+import { captureFullPageScreenshot } from './screenshot.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   const buttonContainer = document.getElementById('buttonContainer');
   const buttons = buttonContainer.getElementsByClassName('action-btn');
@@ -119,6 +121,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     });
+  });
+
+  // Screenshot button functionality
+  document.getElementById('screenshotBtn').addEventListener('click', async () => {
+    try {
+      await captureFullPageScreenshot();
+    } catch (error) {
+      console.error('Error taking screenshot:', error);
+    }
   });
 
   // Mute button functionality

@@ -7,8 +7,17 @@
     "tabs",
     "browsingData",
     "storage",
-    "tabCapture"
+    "tabCapture",
+    "activeTab",
+    "scripting",
+    "downloads"
   ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "src/js/background/screenshot.js"
+  },
   "content_security_policy": {
     "extension_pages": "script-src 'self'; style-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:;"
   },
