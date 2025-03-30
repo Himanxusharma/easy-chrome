@@ -36,4 +36,4 @@ The navbar is draggable, lightweight, and designed to stay out of the way while 
 ### 🛠 Load Locally (For Development & Testing)
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/Himanxusharma/easy-chrome.git
