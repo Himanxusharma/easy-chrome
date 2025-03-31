@@ -21,30 +21,6 @@ async function injectContentScript(tabId) {
   }
 }
 
-// Function to update tab title
-async function updateTabTitle(tabId, isLocked) {
-  try {
-    const result = await chrome.storage.local.get(['lockedTabs']);
-    const lockedTabs = result.lockedTabs || {};
-    const tabInfo = lockedTabs[tabId];
-    
-    if (isLocked) {
-      // Store original title and update to locked state
-      if (tabInfo) {
-        tabInfo.originalTitle = tabInfo.originalTitle || '🔒 Locked Tab';
-        await chrome.tabs.update(tabId, { title: '🔒 Locked Tab' });
-      }
-    } else {
-      // Restore original title
-      if (tabInfo && tabInfo.originalTitle) {
-        await chrome.tabs.update(tabId, { title: tabInfo.originalTitle });
-      }
-    }
-  } catch (error) {
-    console.error('Error updating tab title:', error);
-  }
-}
-
 // Function to lock a tab
 export async function lockTab() {
   try {
@@ -67,13 +43,11 @@ export async function lockTab() {
     lockedTabs[tab.id] = {
       password: password,
       url: tab.url,
-      timestamp: Date.now(),
-      originalTitle: tab.title // Store original title
+      timestamp: Date.now()
     };
     await chrome.storage.local.set({ lockedTabs });
 
-    // Update tab title and hide content
-    await updateTabTitle(tab.id, true);
+    // Inject content script and hide content
     await injectContentScript(tab.id);
     chrome.tabs.sendMessage(tab.id, { action: 'lock' });
 
@@ -99,9 +73,6 @@ export async function unlockTab(tabId) {
     if (!password) return;
 
     if (password === lockedTabs[tabId].password) {
-      // Restore original title before removing from storage
-      await updateTabTitle(tabId, false);
-      
       delete lockedTabs[tabId];
       await chrome.storage.local.set({ lockedTabs });
       
@@ -134,7 +105,6 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
 // Check and restore locked state when tab is loaded
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
   if (changeInfo.status === 'complete' && await isTabLocked(tabId)) {
-    await updateTabTitle(tabId, true);
     await injectContentScript(tabId);
     chrome.tabs.sendMessage(tabId, { action: 'lock' });
   }
