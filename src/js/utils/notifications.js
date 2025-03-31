@@ -1,4 +1,4 @@
-// Function to show notification
+// Function to show notifications
 export function showNotification(message, type = 'success') {
   // Remove any existing notifications
   const existingNotification = document.querySelector('.notification');
@@ -6,12 +6,14 @@ export function showNotification(message, type = 'success') {
     existingNotification.remove();
   }
 
-  // Create and show notification
+  // Create new notification
   const notification = document.createElement('div');
   notification.className = `notification ${type}`;
   notification.textContent = message;
   document.body.appendChild(notification);
-  
-  // Remove after animation completes
-  setTimeout(() => notification.remove(), 1200);
+
+  // Remove notification after 1.2 seconds
+  setTimeout(() => {
+    notification.remove();
+  }, 1200);
 } 

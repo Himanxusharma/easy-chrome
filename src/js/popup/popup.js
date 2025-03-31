@@ -1,5 +1,6 @@
 import { captureFullPageScreenshot } from './screenshot.js';
 import { groupAllTabs } from './groupTabs.js';
+import { lockTab, unlockTab, isTabLocked } from './lockTab.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const buttonContainer = document.getElementById('buttonContainer');
@@ -165,6 +166,38 @@ document.addEventListener('DOMContentLoaded', () => {
       await groupAllTabs();
     } catch (error) {
       console.error('Error grouping tabs:', error);
+    }
+  });
+
+  // Lock tab button functionality
+  const lockTabBtn = document.getElementById('lockTabBtn');
+  const lockTabIcon = lockTabBtn.querySelector('.btn-icon');
+
+  // Check initial lock state and update icon
+  chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
+    if (tabs[0]) {
+      const isLocked = await isTabLocked(tabs[0].id);
+      lockTabIcon.textContent = isLocked ? '🔒' : '🔓';
+      lockTabBtn.title = isLocked ? 'Unlock Tab' : 'Lock Tab';
+    }
+  });
+
+  lockTabBtn.addEventListener('click', async () => {
+    try {
+      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      if (tab) {
+        const isLocked = await isTabLocked(tab.id);
+        if (isLocked) {
+          await unlockTab(tab.id);
+        } else {
+          await lockTab();
+        }
+        // Update icon based on new state
+        lockTabIcon.textContent = isLocked ? '🔓' : '🔒';
+        lockTabBtn.title = isLocked ? 'Lock Tab' : 'Unlock Tab';
+      }
+    } catch (error) {
+      console.error('Error with lock tab:', error);
     }
   });
 }); 

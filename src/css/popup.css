@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  width: 300px;
+  width: 400px;
   height: 40px;
   background: linear-gradient(-45deg, #1a73e8, #4285f4, #185abc, #34A853);
   background-size: 300% 300%;
@@ -262,4 +262,22 @@ body::before {
     transform: translate(-50%, -15px);
     opacity: 0;
   }
+}
+
+/* Add specific styles for lock button */
+#lockTabBtn {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#lockTabBtn:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#lockTabBtn .btn-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  text-align: center;
 }

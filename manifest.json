@@ -2,31 +2,32 @@
   "manifest_version": 3,
   "name": "Easy Chrome",
   "version": "1.0",
-  "description": "Simple Chrome extension for common browser actions",
+  "description": "Simple Chrome extension for common browser actions.",
   "permissions": [
     "tabs",
-    "browsingData",
     "storage",
-    "tabCapture",
     "activeTab",
-    "scripting",
-    "downloads",
-    "tabGroups"
+    "tabGroups",
+    "browsingData",
+    "tabCapture",
+    "scripting"
   ],
-  "host_permissions": [
-    "<all_urls>"
-  ],
+  "action": {
+    "default_popup": "src/html/popup.html",
+    "default_icon": {
+      "128": "public/icons/icon.svg"
+    }
+  },
   "background": {
     "service_worker": "src/js/background/screenshot.js"
   },
-  "content_security_policy": {
-    "extension_pages": "script-src 'self'; style-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:;"
-  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/js/content/hideContent.js"]
+    }
+  ],
   "icons": {
     "128": "public/icons/icon.svg"
-  },
-  "action": {
-    "default_popup": "src/html/popup.html",
-    "default_icon": "public/icons/icon.svg"
   }
 } 
