@@ -2,6 +2,7 @@ import { captureFullPageScreenshot } from './screenshot.js';
 import { groupAllTabs } from './groupTabs.js';
 import { lockTab, unlockTab, isTabLocked } from './lockTab.js';
 import { togglePiP, handleKeyboardNavigation } from './pip.js';
+import { shortenURL } from './urlShortener.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const buttonContainer = document.getElementById('buttonContainer');
@@ -216,6 +217,16 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', async (event) => {
     if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
       await handleKeyboardNavigation(event);
+    }
+  });
+
+  // URL Shortener button functionality
+  const urlShortenerBtn = document.getElementById('urlShortenerBtn');
+  urlShortenerBtn.addEventListener('click', async () => {
+    try {
+      await shortenURL();
+    } catch (error) {
+      console.error('Error with URL shortener:', error);
     }
   });
 }); 
