@@ -1,6 +1,7 @@
 import { captureFullPageScreenshot } from './screenshot.js';
 import { groupAllTabs } from './groupTabs.js';
 import { lockTab, unlockTab, isTabLocked } from './lockTab.js';
+import { togglePiP, handleKeyboardNavigation } from './pip.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const buttonContainer = document.getElementById('buttonContainer');
@@ -198,6 +199,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     } catch (error) {
       console.error('Error with lock tab:', error);
+    }
+  });
+
+  // Picture-in-Picture button functionality
+  const pipBtn = document.getElementById('pipBtn');
+  pipBtn.addEventListener('click', async () => {
+    try {
+      await togglePiP();
+    } catch (error) {
+      console.error('Error toggling PiP:', error);
+    }
+  });
+
+  // Add keyboard event listener for YouTube Shorts navigation
+  document.addEventListener('keydown', async (event) => {
+    if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+      await handleKeyboardNavigation(event);
     }
   });
 }); 
