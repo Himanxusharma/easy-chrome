@@ -1,124 +1,119 @@
-# Easy Chrome - Chrome Extension
+# Easy Chrome Extension
 
-A powerful Chrome extension that enhances your browsing experience with essential features and a modern, intuitive interface.
+A simple Chrome extension that provides quick access to common browser actions.
 
-## 🌟 Features
-
-### Core Functions
-- 🔄 **Refresh Tab**: Quick refresh with cache clearing
-- 🔄 **Hard Refresh**: Complete page reload with cache clearing
-- 📋 **Duplicate Tab**: Create a copy of the current tab
-- 🔇 **Mute/Unmute**: Toggle tab audio with visual feedback
-- 🎯 **Pin Tab**: Keep important tabs in your browser
-- 🎨 **Customizable Interface**: Drag-and-drop button arrangement
-- 📸 **Take Screenshot**: Capture a screenshot of the current tab
-- 🗂️ **Group Tabs**: Organize tabs efficiently
-
-### User Experience
-- 🎨 **Modern Design**: Clean, intuitive interface
-- 🎯 **Drag & Drop**: Customize button positions
-- 💾 **Settings Persistence**: Saves your preferences
-- 🔄 **Real-time Updates**: Instant visual feedback
-- 🎨 **Responsive Design**: Works on all screen sizes
-
-## 🚀 Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/easy-chrome.git
-   ```
-
-2. Open Chrome and navigate to `chrome://extensions/`
-
-3. Enable "Developer mode" in the top right
-
-4. Click "Load unpacked" and select the extension directory
-
-## 🛠️ Features in Detail
-
-### Refresh Tab
-- Quick refresh with cache clearing
-- Maintains current page state
-- Instant visual feedback
-- Keyboard shortcut support
-
-### Hard Refresh
-- Complete page reload
-- Clears all cached data
-- Useful for development
-- Resets page state
-
-### Duplicate Tab
-- Creates exact copy of current tab
-- Preserves page state
-- Maintains history
-- Quick tab management
-
-### Toggle Mute
-- Dynamic icon updates (🔊/🔇)
-- Real-time state changes
-- Persists across refreshes
-- Visual feedback
-
-### Pin Tab
-- Keeps tabs in browser
-- Quick access to important pages
-- Prevents accidental closing
-- Browser restart preservation
-
-### Take Screenshot
-- Capture a screenshot of the current tab
-- Save the screenshot to your device
-- Quick and easy access to visual content
-
-### Group Tabs
-- Creates a new group for all tabs in the current window
-- Groups are named with the current date (e.g., "31 Mar")
-- One group per day for better organization
-- Automatically adds new tabs to the existing group for the day
-- Easy to identify and manage your daily browsing sessions
-
-## 🔒 Permissions Used
-
-The extension requires the following permissions to function properly:
+## Features
 
 ### Tab Management
-- `"tabs"`: Required to:
-  - Access and manipulate the current tab
-  - Get tab information for refresh operations
-  - Check tab mute status
-  - Create new tabs for the duplicate feature
+- **Refresh Tab** (↺): Reload the current tab
+- **Hard Refresh** (⚙️): Clear cache and reload the current tab
+- **Clear Cache** (🗑️): Clear browser cache and storage
+- **Duplicate Tab** (⧉): Create a copy of the current tab
+- **Group Tabs** (🗂️): Automatically group all tabs in the current window
+- **Lock Tab** (🔒): Password protect sensitive tabs
+- **Memory Saver** (⏰): Automatically make inactive tabs inactive to save memory
 
-### Data Management
-- `"browsingData"`: Required to:
-  - Clear browser cache
-  - Perform hard refresh operations
-  - Remove cached data for specific tabs
-  - Improve browsing performance through cache management
+### Media Controls
+- **Mute/Unmute** (🔊/🔇): Toggle audio for the current tab
+- **Picture-in-Picture** (🎬): 
+  - Pop out videos into a floating window
+  - Supports YouTube Shorts navigation (Up/Down arrows)
+  - Supports Instagram Reels
 
-### Storage & Sync
-- `"storage"`: Required to:
-  - Save user preferences
-  - Store button arrangement positions
-  - Sync settings across devices when signed into Chrome
-  - Persist user customizations between browser sessions
+### Utility Features
+- **Screenshot** (📸): Capture full-page screenshots
+- **URL Shortener** (🔗): Create shortened URLs using TinyURL
+- **Quick Note** (📝): Take notes that persist across all tabs
 
-### Audio Control
-- `"tabCapture"`: Required to:
-  - Control tab audio states
-  - Toggle mute/unmute functionality
-  - Access tab audio information
-  - Update mute status indicators
+### UI Features
+- Draggable buttons for custom ordering
+- Persistent button positions
+- Modern glassmorphism design
+- Smooth animations and transitions
+- Responsive layout
 
-### Additional Permissions
-- `"activeTab"`: Required to:
-  - Access the current tab
-- `"downloads"`: Required to:
-## 🤝 Contributing
+## Installation
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+1. Clone this repository
+2. Open Chrome and go to `chrome://extensions/`
+3. Enable "Developer mode" in the top right
+4. Click "Load unpacked" and select the extension directory
 
-## 📝 License
+## Usage
+
+### Tab Management
+- Click the refresh button (↺) to reload the current tab
+- Use hard refresh (⚙️) to clear cache and reload
+- Click the trash icon (🗑️) to clear browser cache
+- Use the duplicate button (⧉) to create a copy of the current tab
+- Click the folder icon (🗂️) to group all tabs
+- Use the lock icon (🔒) to password protect tabs
+- Set up memory saver (⏰) to automatically make inactive tabs inactive
+
+### Media Controls
+- Click the speaker icon (🔊/🔇) to toggle audio
+- Use the video icon (🎬) to pop out videos
+- Navigate YouTube Shorts with Up/Down arrows
+- Works with Instagram Reels
+
+### Utility Features
+- Click the camera icon (📸) to take screenshots
+- Use the link icon (🔗) to shorten URLs
+- Click the note icon (📝) to take quick notes
+
+### Customization
+- Drag and drop buttons to reorder them
+- Button positions are saved automatically
+- Settings persist across browser sessions
+
+## Development
+
+### Project Structure
+```
+easy-chrome/
+├── src/
+│   ├── html/
+│   │   └── popup.html
+│   ├── css/
+│   │   └── popup.css
+│   ├── js/
+│   │   ├── popup/
+│   │   │   ├── popup.js
+│   │   │   ├── screenshot.js
+│   │   │   ├── lockTab.js
+│   │   │   ├── pip.js
+│   │   │   ├── urlShortener.js
+│   │   │   ├── quickNote.js
+│   │   │   ├── groupTabs.js
+│   │   │   └── autoInactive.js
+│   │   ├── background/
+│   │   │   └── screenshot.js
+│   │   ├── content/
+│   │   │   └── hideContent.js
+│   │   └── utils/
+│   │       └── notifications.js
+│   └── manifest.json
+└── public/
+    └── icons/
+        └── icon.svg
+```
+
+### Key Files
+- `manifest.json`: Extension configuration
+- `popup.html`: Main UI structure
+- `popup.css`: Styling and animations
+- `popup.js`: Core functionality and button handlers
+- `notifications.js`: Shared notification system
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
+
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
