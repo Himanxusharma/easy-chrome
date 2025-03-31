@@ -125,7 +125,7 @@ For support, please open an issue in the GitHub repository or contact [contact i
 
 ```
 easy-chrome/
-├── src/                  # Source code
+├── src/                 # Source code
 │   ├── js/              # JavaScript files
 │   │   ├── background/  # Background scripts
 │   │   └── popup/       # Popup related scripts
