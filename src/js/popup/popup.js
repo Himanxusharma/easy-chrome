@@ -1,8 +1,9 @@
 import { captureFullPageScreenshot } from './screenshot.js';
+import { groupAllTabs } from './groupTabs.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const buttonContainer = document.getElementById('buttonContainer');
-  const buttons = buttonContainer.getElementsByClassName('action-btn');
+  const buttons = buttonContainer.querySelectorAll('.action-btn');
   let draggedButton = null;
 
   // Initialize drag and drop
@@ -156,5 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     });
+  });
+
+  // Group tabs button functionality
+  document.getElementById('groupTabsBtn').addEventListener('click', async () => {
+    try {
+      await groupAllTabs();
+    } catch (error) {
+      console.error('Error grouping tabs:', error);
+    }
   });
 }); 

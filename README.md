@@ -11,6 +11,8 @@ A powerful Chrome extension that enhances your browsing experience with essentia
 - 🔇 **Mute/Unmute**: Toggle tab audio with visual feedback
 - 🎯 **Pin Tab**: Keep important tabs in your browser
 - 🎨 **Customizable Interface**: Drag-and-drop button arrangement
+- 📸 **Take Screenshot**: Capture a screenshot of the current tab
+- 🗂️ **Group Tabs**: Organize tabs efficiently
 
 ### User Experience
 - 🎨 **Modern Design**: Clean, intuitive interface
@@ -64,6 +66,18 @@ A powerful Chrome extension that enhances your browsing experience with essentia
 - Prevents accidental closing
 - Browser restart preservation
 
+### Take Screenshot
+- Capture a screenshot of the current tab
+- Save the screenshot to your device
+- Quick and easy access to visual content
+
+### Group Tabs
+- Creates a new group for all tabs in the current window
+- Groups are named with the current date (e.g., "31 Mar")
+- One group per day for better organization
+- Automatically adds new tabs to the existing group for the day
+- Easy to identify and manage your daily browsing sessions
+
 ## 🔒 Permissions Used
 
 The extension requires the following permissions to function properly:
@@ -96,6 +110,10 @@ The extension requires the following permissions to function properly:
   - Access tab audio information
   - Update mute status indicators
 
+### Additional Permissions
+- `"activeTab"`: Required to:
+  - Access the current tab
+- `"downloads"`: Required to:
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
