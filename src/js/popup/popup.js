@@ -3,6 +3,14 @@ import { groupAllTabs } from './groupTabs.js';
 import { lockTab, unlockTab, isTabLocked } from './lockTab.js';
 import { togglePiP, handleKeyboardNavigation } from './pip.js';
 import { shortenURL } from './urlShortener.js';
+import { showQuickNote } from './quickNote.js';
+import { showAutoInactiveModal } from './autoInactive.js';
+
+// Utility function to close all modals
+function closeAllModals() {
+  const modals = document.querySelectorAll('.note-modal');
+  modals.forEach(modal => modal.remove());
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const buttonContainer = document.getElementById('buttonContainer');
@@ -226,7 +234,19 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       await shortenURL();
     } catch (error) {
-      console.error('Error with URL shortener:', error);
+      console.error('Error shortening URL:', error);
     }
+  });
+
+  // Quick Note button
+  document.getElementById('quickNoteBtn').addEventListener('click', () => {
+    closeAllModals();
+    showQuickNote();
+  });
+
+  // Auto Inactive button
+  document.getElementById('autoInactiveBtn').addEventListener('click', () => {
+    closeAllModals();
+    showAutoInactiveModal();
   });
 }); 

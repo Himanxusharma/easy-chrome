@@ -19,7 +19,8 @@
     }
   },
   "background": {
-    "service_worker": "src/js/background/screenshot.js"
+    "service_worker": "src/js/background/screenshot.js",
+    "type": "module"
   },
   "content_scripts": [
     {
