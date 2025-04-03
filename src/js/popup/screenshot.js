@@ -18,7 +18,6 @@ async function captureFullPageScreenshot() {
     showNotification('Screenshot saved!');
 
   } catch (error) {
-    console.error('Error capturing screenshot:', error);
     showNotification('Screenshot failed', 'error');
   }
 }

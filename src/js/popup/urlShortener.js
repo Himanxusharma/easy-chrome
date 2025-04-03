@@ -20,7 +20,6 @@ export async function shortenURL() {
     // Show the shortened URL in a prompt
     prompt('Shortened URL (copied to clipboard):', shortUrl);
   } catch (error) {
-    console.error('Error shortening URL:', error);
     showNotification('Failed to shorten URL', 'error');
   }
 } 

@@ -53,7 +53,6 @@ export async function lockTab() {
 
     showNotification('Tab locked successfully', 'success');
   } catch (error) {
-    console.error('Error locking tab:', error);
     showNotification('Failed to lock tab', 'error');
   }
 }

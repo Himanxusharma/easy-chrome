@@ -198,7 +198,6 @@ export async function togglePiP() {
 
     showNotification('Entered Picture-in-Picture mode', 'success');
   } catch (error) {
-    console.error('Error toggling PiP:', error);
     showNotification('Failed to toggle Picture-in-Picture', 'error');
   }
 }

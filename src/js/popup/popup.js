@@ -95,31 +95,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Button functionality
-  document.getElementById('refreshBtn').addEventListener('click', () => {
-    chrome.tabs.reload();
-  });
-
   document.getElementById('hardRefreshBtn').addEventListener('click', () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       if (tabs[0]) {
-        chrome.browsingData.removeCache({
+        // Remove both cache and cookies
+        chrome.browsingData.remove({
           "since": Date.now()
+        }, {
+          "cache": true,
+          "cookies": true
         }, () => {
           chrome.tabs.reload(tabs[0].id, { bypassCache: true });
         });
       }
-    });
-  });
-
-  document.getElementById('clearCacheBtn').addEventListener('click', () => {
-    chrome.browsingData.remove({
-      "since": 0
-    }, {
-      "cache": true,
-      "cacheStorage": true
-    }, () => {
-      alert('Browser cache has been cleared!');
     });
   });
 
