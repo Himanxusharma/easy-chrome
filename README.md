@@ -1,36 +1,34 @@
 # Easy Chrome Extension
 
-A simple Chrome extension that provides quick access to common browser actions.
+A powerful Chrome extension that enhances your browsing experience with a variety of useful features.
 
 ## Features
 
 ### Tab Management
-- **Refresh Tab** (↺): Reload the current tab
-- **Hard Refresh** (⚙️): Clear cache and reload the current tab
-- **Clear Cache** (🗑️): Clear browser cache and storage
-- **Duplicate Tab** (⧉): Create a copy of the current tab
-- **Group Tabs** (🗂️): Automatically group all tabs in the current window
-- **Lock Tab** (🔒): Password protect sensitive tabs
-- **Memory Saver** (⏰): Automatically make inactive tabs inactive to save memory
+- **Hard Refresh**: Clear cache and cookies while refreshing the page (↺)
+- **Duplicate Tab**: Create a copy of the current tab (⧉)
+- **Group Tabs**: Organize tabs into groups and make them inactive (🗂️)
+- **Lock Tab**: Password-protect important tabs (🔒)
+- **Auto Inactive**: Automatically make inactive tabs inactive after a set time (⏰)
 
 ### Media Controls
-- **Mute/Unmute** (🔊/🔇): Toggle audio for the current tab
-- **Picture-in-Picture** (🎬): 
-  - Pop out videos into a floating window
-  - Supports YouTube Shorts navigation (Up/Down arrows)
-  - Supports Instagram Reels
+- **Toggle Mute**: Quickly mute/unmute tabs (🔊)
+- **Picture-in-Picture**: Pop out videos into a floating window (🎬)
+  - Supports YouTube Shorts and Instagram Reels
+  - Keyboard navigation for Shorts/Reels
 
 ### Utility Features
-- **Screenshot** (📸): Capture full-page screenshots
-- **URL Shortener** (🔗): Create shortened URLs using TinyURL
-- **Quick Note** (📝): Take notes that persist across all tabs
+- **Screenshot**: Capture full-page screenshots (📸)
+- **URL Shortener**: Create shortened URLs using TinyURL (🔗)
+- **Quick Note**: Take notes directly from the extension (📝)
 
 ### UI Features
-- Draggable buttons for custom ordering
+- Draggable buttons for customization
 - Persistent button positions
-- Modern glassmorphism design
-- Smooth animations and transitions
-- Responsive layout
+- Modern design with Bootstrap
+- Smooth animations
+- Toast notifications
+- Modal dialogs for settings
 
 ## Installation
 
@@ -42,68 +40,57 @@ A simple Chrome extension that provides quick access to common browser actions.
 ## Usage
 
 ### Tab Management
-- Click the refresh button (↺) to reload the current tab
-- Use hard refresh (⚙️) to clear cache and reload
-- Click the trash icon (🗑️) to clear browser cache
+- Click the refresh button (↺) to hard refresh the current tab (clears cache and cookies)
 - Use the duplicate button (⧉) to create a copy of the current tab
-- Click the folder icon (🗂️) to group all tabs
-- Use the lock icon (🔒) to password protect tabs
-- Set up memory saver (⏰) to automatically make inactive tabs inactive
+- Click the group button (🗂️) to organize tabs into groups
+- Use the lock button (🔒) to password-protect important tabs
+- Configure auto-inactive settings (⏰) to automatically manage inactive tabs
 
 ### Media Controls
-- Click the speaker icon (🔊/🔇) to toggle audio
-- Use the video icon (🎬) to pop out videos
-- Navigate YouTube Shorts with Up/Down arrows
-- Works with Instagram Reels
+- Click the speaker icon (🔊) to mute/unmute the current tab
+- Use the PiP button (🎬) to pop out videos into a floating window
+  - Navigate YouTube Shorts/Instagram Reels with arrow keys
 
 ### Utility Features
-- Click the camera icon (📸) to take screenshots
-- Use the link icon (🔗) to shorten URLs
+- Click the camera icon (📸) to take a full-page screenshot
+- Use the link icon (🔗) to create shortened URLs
 - Click the note icon (📝) to take quick notes
 
 ### Customization
 - Drag and drop buttons to reorder them
 - Button positions are saved automatically
-- Settings persist across browser sessions
+- All settings persist across browser sessions
 
 ## Development
 
 ### Project Structure
 ```
-easy-chrome/
-├── src/
-│   ├── html/
-│   │   └── popup.html
-│   ├── css/
-│   │   └── popup.css
-│   ├── js/
-│   │   ├── popup/
-│   │   │   ├── popup.js
-│   │   │   ├── screenshot.js
-│   │   │   ├── lockTab.js
-│   │   │   ├── pip.js
-│   │   │   ├── urlShortener.js
-│   │   │   ├── quickNote.js
-│   │   │   ├── groupTabs.js
-│   │   │   └── autoInactive.js
-│   │   ├── background/
-│   │   │   └── screenshot.js
-│   │   ├── content/
-│   │   │   └── hideContent.js
-│   │   └── utils/
-│   │       └── notifications.js
-│   └── manifest.json
+src/
+├── html/
+│   └── popup.html
+├── css/
+│   └── popup.css
+├── js/
+│   ├── popup/
+│   │   ├── popup.js
+│   │   ├── screenshot.js
+│   │   ├── lockTab.js
+│   │   ├── pip.js
+│   │   ├── urlShortener.js
+│   │   ├── quickNote.js
+│   │   └── autoInactive.js
+│   └── utils/
+│       └── notifications.js
 └── public/
     └── icons/
-        └── icon.svg
 ```
 
 ### Key Files
 - `manifest.json`: Extension configuration
-- `popup.html`: Main UI structure
-- `popup.css`: Styling and animations
-- `popup.js`: Core functionality and button handlers
-- `notifications.js`: Shared notification system
+- `popup.html`: Main UI
+- `popup.css`: Styling
+- `popup.js`: Core functionality
+- Feature-specific JS files in `popup/` directory
 
 ## Contributing
 
