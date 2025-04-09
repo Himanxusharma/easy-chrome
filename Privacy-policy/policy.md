@@ -1,75 +1,79 @@
-# Easy Chrome Extension Privacy Policy
+# Privacy Policy for Easy Chrome Extension
 
-*Last updated: April 2024*
+Last updated: April 2024
 
-## 1. Introduction
+## Introduction
 
-This Privacy Policy describes how Easy Chrome ("we", "our", or "us") handles your information when you use our Chrome extension. We are committed to protecting your privacy and ensuring transparency about our data practices.
+Easy Chrome ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our Chrome extension.
 
-## 2. Data Collection and Storage
+## Data Collection and Usage
 
-We store the following data locally on your device using Chrome's local storage:
+### 1. Daily URLs
+- **What we collect**: URLs and titles of websites you choose to save
+- **How we use it**: To provide quick access to your saved URLs
+- **Storage**: Locally in your browser using Chrome's storage API
+- **Sharing**: Not shared with any third parties
 
-- Encrypted passwords (for tab locking feature only)
-- Notes and annotations
-- Auto-refresh settings and intervals
-- Archived tabs information
-- Daily URLs list
-- Tab activity timestamps
+### 2. Quick Notes
+- **What we collect**: Text content of notes you create
+- **How we use it**: To store and display your notes
+- **Storage**: Locally in your browser using Chrome's storage API
+- **Sharing**: Not shared with any third parties
 
-All data is stored locally and never transmitted to external servers.
+### 3. Tab Management
+- **What we collect**: URLs and titles of tabs you archive
+- **How we use it**: To restore archived tabs when requested
+- **Storage**: Locally in your browser using Chrome's storage API
+- **Sharing**: Not shared with any third parties
 
-## 3. Data We Do Not Collect
+### 4. Auto-Refresh Settings
+- **What we collect**: Refresh intervals and tab IDs
+- **How we use it**: To automatically refresh specified tabs
+- **Storage**: Locally in your browser using Chrome's storage API
+- **Sharing**: Not shared with any third parties
 
-We explicitly do not collect:
+### 5. Tab Locking
+- **What we collect**: Password (hashed) for tab locking feature
+- **How we use it**: To secure your locked tabs
+- **Storage**: Locally in your browser using Chrome's storage API
+- **Sharing**: Not shared with any third parties
 
-- Personally identifiable information (name, email, address, etc.)
-- Browsing history or web content
-- Financial or payment information
-- Location data
-- Health information
-- Personal communications
-- User activity logs
+### 6. Feedback
+- **What we collect**: Ratings and feedback text
+- **How we use it**: To improve the extension
+- **Storage**: In our Supabase database
+- **Sharing**: Only with our development team
 
-## 4. External Services
+## Permissions Used
 
-The extension uses the following external services:
+Our extension requires the following Chrome permissions:
 
-- **TinyURL**: Only the URL you want to shorten is sent to their service
-- **Supabase**: Used only for optional feedback submission (if you choose to provide it)
+1. `activeTab`: To interact with the current tab for features like hard refresh, mute, and screenshot
+2. `browsingData`: To clear cache and cookies during hard refresh
+3. `cookies`: To manage cookies during hard refresh
+4. `storage`: To save your preferences and data locally
+5. `tabCapture`: To capture screenshots of tabs
+6. `scripting`: To inject necessary scripts for features like tab locking
 
-## 5. Required Permissions
+## Data Security
 
-We use the following Chrome permissions:
+- All data is stored locally in your browser
+- No sensitive information is collected
+- No personal data is shared with third parties
+- Feedback data is stored securely in Supabase with appropriate access controls
 
-- **activeTab**: For accessing current tab content and URL
-- **browsingData**: For hard refresh functionality
-- **cookies**: For hard refresh functionality
-- **storage**: For local data storage
-- **tabCapture**: For screenshot functionality
-- **scripting**: For tab management features
-- **clipboardWrite**: For URL shortening feature
+## Your Rights
 
-## 6. Data Usage
+You have the right to:
+- Access your stored data
+- Delete your stored data
+- Clear all extension data
+- Opt out of feedback collection
 
-- All data is used only within the extension
-- No data is shared with third parties (except for URL shortening)
-- You can clear all stored data at any time using the "Clear Data" feature
-- Data is not used for advertising or analytics
+## Changes to This Policy
 
-## 7. Security
+We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
 
-We implement appropriate security measures to protect your data:
+## Contact Us
 
-- All data is stored locally on your device
-- Passwords are encrypted before storage
-- No sensitive data is transmitted over the network
-
-## 8. Changes to This Policy
-
-We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
-
-## 9. Contact Us
-
-If you have any questions about this Privacy Policy, please contact us at:
-Email: ootmlab@gmail.com 
+If you have any questions about this Privacy Policy, please contact us through the feedback feature in the extension. 
