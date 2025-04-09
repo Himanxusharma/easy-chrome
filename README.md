@@ -14,6 +14,7 @@ A powerful Chrome extension that supercharges your browsing experience with esse
 - One-click cache clearing
 - Instant page reload
 - Perfect for developers and testers
+- Clears cookies and cache for the current domain
 
 ### ⏱️ Auto-Refresh
 - Tab-specific refresh intervals
@@ -28,6 +29,7 @@ A powerful Chrome extension that supercharges your browsing experience with esse
 - Quick access to your daily sites
 - Open all URLs with one click
 - Edit and manage your URL list
+- Add current tab with one click
 
 ### 🔇 Smart Mute
 - Quick tab muting/unmuting
@@ -38,26 +40,18 @@ A powerful Chrome extension that supercharges your browsing experience with esse
 - Instant tab capture
 - Automatic file naming
 - One-click download
-
-### 🔒 Tab Lock
-- Password-protected tab locking
-- Blur effect for privacy
-- Secure password storage
+- High-quality PNG format
 
 ### 🎥 Picture-in-Picture
 - Smart video detection
 - Works with YouTube, Instagram, and more
 - One-click PiP mode
 
-### 🔗 URL Shortener
-- Instant URL shortening via TinyURL
-- Automatic clipboard copy
-- Success notification
-
 ### 📝 Quick Notes
 - Persistent note storage
 - Easy editing
 - Clean interface
+- Quick access to your important notes
 
 ### 📦 Smart Tab Archive
 - Archive inactive tabs
@@ -82,7 +76,7 @@ A powerful Chrome extension that supercharges your browsing experience with esse
 2. Open Chrome and go to `chrome://extensions/`
 3. Enable "Developer mode"
 4. Click "Load unpacked"
-5. Select the `dist` directory
+5. Select the extension directory
 
 ## 🔧 Development
 
@@ -109,6 +103,7 @@ npm run watch
 - Add URLs with optional custom titles
 - Open all saved URLs at once
 - Edit or delete URLs as needed
+- Add current tab with one click
 
 ### Tab Management
 - Use the mute button to toggle audio
@@ -118,7 +113,6 @@ npm run watch
 - Restore archived tabs when needed
 
 ### Productivity Tools
-- Quickly shorten and copy URLs with the link icon
 - Save persistent notes with the pencil icon
 - Access your notes across browser sessions
 
@@ -130,6 +124,24 @@ npm run watch
 - **Quick Notes**: Notes persist across browser sessions
 - **Daily URLs**: Leave the title field empty to automatically use the domain name
 - **Tab Archive**: Use the "Keep important tabs" option to preserve pinned tabs
+
+## Privacy
+
+- All data is stored locally in your browser
+- No sensitive information is collected
+- No personal data is shared with third parties
+- See [Privacy Policy](Privacy-policy/policy.md) for details
+
+## Permissions
+
+The extension requires the following permissions:
+- `activeTab`: For interacting with current tab
+- `browsingData`: For cache clearing
+- `cookies`: For managing cookies
+- `storage`: For saving preferences
+- `tabCapture`: For screenshots
+- `scripting`: For tab locking
+- `clipboardWrite`: For copying URLs
 
 ## 🤝 Contributing
 
@@ -145,6 +157,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - React
 - TypeScript
 - Tailwind CSS
+- Supabase (for feedback)
 
 ---
 
